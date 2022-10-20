@@ -1,0 +1,1 @@
+docker build --file Dockerfile-ical_service --tag ical_service .

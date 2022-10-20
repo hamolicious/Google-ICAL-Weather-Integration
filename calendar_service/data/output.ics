@@ -1,0 +1,61 @@
+BEGIN:VCALENDAR
+X-WR-CALDESC:Displays weather for the week
+X-WR-CALNAME:Weather
+X-WR-TIMEZONE:UTC
+BEGIN:VEVENT
+SUMMARY:⛈️ Weather | Slight Thunderstorm with hail
+DTSTART:20221020
+UID:23c8a8e1f397911212d92c460a1afccc
+DESCRIPTION:Maximum Temperature: 15.6°C\nMinimum Temperature: 11.1°C\nSu
+ nrise: 07:31:57\nSunset: 17:55:39\nPrecipitation: 23.3mm\nMaximum wind spe
+ eds: 22.0km/h
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:☔ Weather | Slight Showers
+DTSTART:20221021
+UID:15cfae7545ac932ba20b6bac0931999f
+DESCRIPTION:Maximum Temperature: 18.5°C\nMinimum Temperature: 9.3°C\nSun
+ rise: 07:33:46\nSunset: 17:53:29\nPrecipitation: 0.7mm\nMaximum wind speed
+ s: 30.8km/h
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:☁️ Weather | Overcast
+DTSTART:20221022
+UID:f16862e22f0b328cf51429bf827419d0
+DESCRIPTION:Maximum Temperature: 17.3°C\nMinimum Temperature: 12.2°C\nSu
+ nrise: 07:35:35\nSunset: 17:51:19\nPrecipitation: 0.0mm\nMaximum wind spee
+ ds: 24.6km/h
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:⛈️ Weather | Moderate Thunderstorm
+DTSTART:20221023
+UID:a78aab790bb59e7c39b921ad132e212e
+DESCRIPTION:Maximum Temperature: 18.0°C\nMinimum Temperature: 12.2°C\nSu
+ nrise: 07:37:23\nSunset: 17:49:16\nPrecipitation: 12.9mm\nMaximum wind spe
+ eds: 26.9km/h
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:☔ Weather | Slight Showers
+DTSTART:20221024
+UID:1a49ffec48ef3c442a26db61aaf5a3e8
+DESCRIPTION:Maximum Temperature: 15.8°C\nMinimum Temperature: 11.6°C\nSu
+ nrise: 07:39:11\nSunset: 17:47:14\nPrecipitation: 3.0mm\nMaximum wind spee
+ ds: 29.6km/h
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:☁️ Weather | Overcast
+DTSTART:20221025
+UID:0d0defb23cf615788fb4a0abea186808
+DESCRIPTION:Maximum Temperature: 16.2°C\nMinimum Temperature: 10.7°C\nSu
+ nrise: 07:41:00\nSunset: 17:45:11\nPrecipitation: 0.0mm\nMaximum wind spee
+ ds: 20.0km/h
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:☁️ Weather | Overcast
+DTSTART:20221026
+UID:12758616eda18e38ded65cbbb3ae5d89
+DESCRIPTION:Maximum Temperature: 19.2°C\nMinimum Temperature: 10.5°C\nSu
+ nrise: 07:42:49\nSunset: 17:43:07\nPrecipitation: 0.0mm\nMaximum wind spee
+ ds: 21.2km/h
+END:VEVENT
+END:VCALENDAR

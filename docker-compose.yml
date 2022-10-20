@@ -1,0 +1,19 @@
+
+services:
+  ical:
+    image: ical_service
+    ports:
+      - "3000:3000"
+    networks:
+      - calendar_network
+
+  calendar:
+    image: calendar_service
+    depends_on:
+      - ical
+    networks:
+      - calendar_network
+
+networks:
+  calendar_network:
+    driver: bridge

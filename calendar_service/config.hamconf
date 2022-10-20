@@ -1,0 +1,6 @@
+@version 1
+
+[CONFIG]
+wait_time_secs [int] = 3600
+
+
