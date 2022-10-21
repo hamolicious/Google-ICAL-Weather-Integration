@@ -1,14 +1,18 @@
 @version 1
 
 [CONFIG]
+// time between requests to weather api
 wait_time_secs [int] = 3600
+// the amount of days to request data ahead for
 look_forward_amount [int] = 7
 
 [LOCALE]
+// coordinates of your desired weather location
 lat [float] = 51.8234
 long [float] = 13.1371
 
 [ICONS]
+// icons and the name to use
 umbrella [str] = '☔'
 cloud [str] = '☁️'
 sunny [str] = '☀️'
@@ -20,6 +24,7 @@ sun_behind_large_cloud [str] = '🌥️'
 fog [str] = '🌫️'
 
 [WEATHERCODES]
+// WW-WMO Weather Codes and their description along with the icon to use
 weather_code_0 [arr str] = ['Clear Sky', 'sunny']
 weather_code_1 [arr str] = ['Mainly Clear', 'sun_behind_small_cloud']
 weather_code_2 [arr str] = ['Partly Cloudy', 'partly_sunny']
