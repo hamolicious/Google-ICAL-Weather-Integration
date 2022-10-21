@@ -1,4 +1,3 @@
-
 services:
   ical:
     build: ical_service/
@@ -7,6 +6,8 @@ services:
       - "3000:3000"
     networks:
       - calendar_network
+    environment:
+      TZ: Europe/London
 
   calendar:
     build: calendar_service/
@@ -15,6 +16,8 @@ services:
       - ical
     networks:
       - calendar_network
+    environment:
+      TZ: Europe/London
 
 networks:
   calendar_network:
