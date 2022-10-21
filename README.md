@@ -3,10 +3,14 @@ Uses a [weather api](https://open-meteo.com/en) to request weather data for the 
 
 
 ## How to run
-
+1. Modify the desired configs (See [config](#configuration) section)
+1. run `docker compose build` to build the images needed
+1. run `docker compose up -d` to start the service
+1. use Google's calendar 'import from URL' feature to point Google to the service
+1. Profit
 
 ## Configuration
-The Calendar Service has a [config file](calendar_service/calendar_service/config.hamconf):
+The Calendar Service has a [config file](calendar_service/calendar_service/config.hamconf), the file is a custom configuration language I decided to use to test the maturity of the language ([documentation](https://github.com/hamolicious/hamconf)).
 
 ### CONFIG
 The `[CONFIG]` section contains basic configs for the service
