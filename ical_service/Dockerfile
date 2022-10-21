@@ -1,7 +1,7 @@
 FROM python:3.10.8
 
 
-COPY ical_service/requirements.txt ./
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ical_service/ ical_service

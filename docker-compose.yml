@@ -1,14 +1,16 @@
 
 services:
   ical:
-    image: ical_service
+    build: ical_service/
+    container_name: ICALService
     ports:
       - "3000:3000"
     networks:
       - calendar_network
 
   calendar:
-    image: calendar_service
+    build: calendar_service/
+    container_name: CalendarService
     depends_on:
       - ical
     networks:

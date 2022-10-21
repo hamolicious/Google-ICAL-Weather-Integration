@@ -6,7 +6,9 @@ from hamconfig import parse_file
 import requests
 import base64
 
-config = parse_file('calendar_service/config.hamconf')
+PATH = 'calendar_service/'
+
+config = parse_file(f'{PATH}config.hamconf')
 
 reset_time = lambda : time() + config.get('CONFIG.wait_time_secs')
 end_time = 0
@@ -18,7 +20,7 @@ try:
 			calendar['X-WR-TIMEZONE'] = 'UTC'
 			calendar['X-WR-CALDESC'] = 'Displays weather for the week'
 
-			with open('calendar_service/data/test.json', 'r') as f:
+			with open(f'{PATH}data/test.json', 'r') as f:
 				data: dict = json.load(f)
 
 			for i in range(7):
@@ -27,7 +29,7 @@ try:
 
 			string = calendar.to_ical().decode("utf-8").strip()
 
-			with open('calendar_service/data/output.ics', 'w') as f:
+			with open(f'{PATH}data/output.ics', 'w') as f:
 				f.write(string)
 
 			to_send = base64.b64encode(bytes(string, 'UTF-8'))
