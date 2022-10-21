@@ -26,6 +26,8 @@ class Day:
 		desc, icon_name = config.get(f'WEATHERCODES.weather_code_{weather_code}')
 		icon = config.get(f'ICONS.{icon_name}')
 
+		uid = md5((iso8601(time) + 'hamolicious').encode('UTF-8')).hexdigest()
+
 		maximum_temperature = get('temperature_2m_max')
 		minimum_temperature = get('temperature_2m_min')
 		sunrise = hms(get('sunrise'))
@@ -43,7 +45,7 @@ class Day:
 
 		self.__event['dtstart'] = iso8601(time)
 		self.__event['summary'] = f'{icon} Weather | {desc}'
-		self.__event['uid'] = md5(iso8601(time).encode('UTF-8')).hexdigest()
+		self.__event['uid'] = uid
 		self.__event['description'] = '\n'.join(description)
 
 	def get_event(self) -> Event:
