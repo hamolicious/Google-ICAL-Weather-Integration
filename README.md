@@ -1,6 +1,8 @@
 # Google-ICAL-Weather-Integration
 Uses a [weather api](https://open-meteo.com/en) to request weather data for the next 7 days and integrates it into Google Calendar [^1]
 
+![image](https://user-images.githubusercontent.com/56944714/197138994-32a56871-bf07-489a-80b9-dbfeca120b71.png)
+
 
 ## How to run
 
