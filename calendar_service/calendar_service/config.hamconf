@@ -3,4 +3,44 @@
 [CONFIG]
 wait_time_secs [int] = 3600
 
+[ICONS]
+umbrella [str] = '☔'
+cloud [str] = '☁️'
+sunny [str] = '☀️'
+sun_behind_small_cloud [str] = '🌤️'
+partly_sunny [str] = '⛅'
+cloud_with_snow [str] = '🌨️'
+cloud_with_lightning_and_rain [str] = '⛈️'
+sun_behind_large_cloud [str] = '🌥️'
+fog [str] = '🌫️'
+
+[WEATHERCODES]
+weather_code_0 [arr str] = ['Clear Sky', 'sunny']
+weather_code_1 [arr str] = ['Mainly Clear', 'sun_behind_small_cloud']
+weather_code_2 [arr str] = ['Partly Cloudy', 'partly_sunny']
+weather_code_3 [arr str] = ['Overcast', 'cloud']
+weather_code_45 [arr str] = ['Fog', 'fog']
+weather_code_48 [arr str] = ['Fog', 'fog']
+weather_code_51 [arr str] = ['Light Drizzle', 'umbrella']
+weather_code_53 [arr str] = ['Moderate Drizzle', 'umbrella']
+weather_code_55 [arr str] = ['Intense Drizzle', 'umbrella']
+weather_code_56 [arr str] = ['Light Freezing Drizzle', 'umbrella']
+weather_code_57 [arr str] = ['Intense Freezing Drizzle', 'umbrella']
+weather_code_61 [arr str] = ['Slight Rain', 'umbrella']
+weather_code_63 [arr str] = ['Moderate Rain', 'umbrella']
+weather_code_65 [arr str] = ['Heavy Rain', 'umbrella']
+weather_code_66 [arr str] = ['Light Freezing Rain', 'umbrella']
+weather_code_67 [arr str] = ['Heavy Freezing Rain', 'umbrella']
+weather_code_71 [arr str] = ['Slight Snow Fall', 'cloud_with_snow']
+weather_code_73 [arr str] = ['Moderate Snow Fall', 'cloud_with_snow']
+weather_code_75 [arr str] = ['Heavy Snow Fall', 'cloud_with_snow']
+weather_code_77 [arr str] = ['Snow Grains', 'cloud_with_snow']
+weather_code_80 [arr str] = ['Slight Showers', 'umbrella']
+weather_code_81 [arr str] = ['Moderate Showers', 'umbrella']
+weather_code_82 [arr str] = ['Violent Showers', 'umbrella']
+weather_code_85 [arr str] = ['Slight Snow Shower', 'umbrella']
+weather_code_86 [arr str] = ['Heavy Snow Shower', 'umbrella']
+weather_code_95 [arr str] = ['Moderate Thunderstorm', 'cloud_with_lightning_and_rain']
+weather_code_96 [arr str] = ['Slight Thunderstorm with hail', 'cloud_with_lightning_and_rain']
+weather_code_99 [arr str] = ['Heavy Thunderstorm with hail', 'cloud_with_lightning_and_rain]
 
