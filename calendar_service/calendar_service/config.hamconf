@@ -3,6 +3,10 @@
 [CONFIG]
 wait_time_secs [int] = 3600
 
+[LOCALE]
+lat [float] = 51.8234
+long [float] = 13.1371
+
 [ICONS]
 umbrella [str] = '☔'
 cloud [str] = '☁️'

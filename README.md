@@ -8,8 +8,17 @@ Uses a [weather api](https://open-meteo.com/en) to request weather data for the 
 ## Configuration
 The Calendar Service has a [config file](calendar_service/calendar_service/config.hamconf):
 
+### CONFIG
+The `[CONFIG]` section contains basic configs for the service
 - wait_time_secs [`int`] | The time between weather API requests and updating of the [ICAL Service](https://github.com/hamolicious/Google-ICAL-Weather-Integration/tree/master/ical_service)'s data
 
-The `[ICONS]` section contains definitions for what the icons should look like and the `[WEATHERCODES]` section contains a selection of the WW WMO Weather Codes and their assigned icons and descriptions.
+### LOCALE
+The `[LOCALE]` section contains information about the location of the desired weather data
+
+### ICONS
+The `[ICONS]` section contains definitions for what the icons should look like.
+
+### WEATHERCODES
+The `[WEATHERCODES]` section contains a selection of the WW-WMO Weather Codes and their assigned icons and descriptions.
 
 [^1]: May work with non "Google" calendars however that has not been tested
