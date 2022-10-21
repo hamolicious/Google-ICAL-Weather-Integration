@@ -2,6 +2,7 @@
 
 [CONFIG]
 wait_time_secs [int] = 3600
+look_forward_amount [int] = 7
 
 [LOCALE]
 lat [float] = 51.8234

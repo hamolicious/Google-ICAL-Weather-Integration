@@ -6,6 +6,7 @@ from time import time
 from hamconfig import parse_file
 import requests
 import base64
+import os
 
 PATH = 'calendar_service/'
 
@@ -18,12 +19,12 @@ try:
 		if time() > end_time:
 			calendar = Calendar()
 			calendar['X-WR-CALNAME'] = 'Weather'
-			calendar['X-WR-TIMEZONE'] = 'UTC'
+			calendar['X-WR-TIMEZONE'] = os.environ.get('TZ')
 			calendar['X-WR-CALDESC'] = 'Displays weather for the week'
 
 			data: dict = get_weather()
 
-			for i in range(7):
+			for i in range(config.get('CONFIG.look_forward_amount')):
 				day = Day(data, i)
 				calendar.add_component(day.get_event())
 

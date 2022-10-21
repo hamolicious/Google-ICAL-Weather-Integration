@@ -16,7 +16,7 @@ def get_weather() -> dict:
 		lat=config.get('LOCALE.lat'),
 		long=config.get('LOCALE.long'),
 		start_date=yyyymmdd(get_todays_date()),
-		end_date=yyyymmdd(get_todays_date() + timedelta(days=7)),
+		end_date=yyyymmdd(get_todays_date() + timedelta(days=config.get('CONFIG.look_forward_amount'))),
 	)
 
 	with requests.get(new_url) as r:
