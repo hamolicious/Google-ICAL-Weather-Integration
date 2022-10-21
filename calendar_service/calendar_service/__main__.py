@@ -1,3 +1,4 @@
+from weather import get_weather
 from icalendar import Calendar
 import json
 from day import Day
@@ -20,8 +21,7 @@ try:
 			calendar['X-WR-TIMEZONE'] = 'UTC'
 			calendar['X-WR-CALDESC'] = 'Displays weather for the week'
 
-			with open(f'{PATH}data/test.json', 'r') as f:
-				data: dict = json.load(f)
+			data: dict = get_weather()
 
 			for i in range(7):
 				day = Day(data, i)
@@ -40,4 +40,4 @@ try:
 except KeyboardInterrupt:
 	quit()
 except Exception as e:
-	print(e)
+	raise e
