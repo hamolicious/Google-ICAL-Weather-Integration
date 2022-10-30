@@ -1,3 +1,4 @@
+from weather import get_weather
 from icalendar import Calendar
 import json
 from day import Day
@@ -5,8 +6,11 @@ from time import time
 from hamconfig import parse_file
 import requests
 import base64
+import os
 
-config = parse_file('calendar_service/config.hamconf')
+PATH = 'calendar_service/'
+
+config = parse_file(f'{PATH}config.hamconf')
 
 reset_time = lambda : time() + config.get('CONFIG.wait_time_secs')
 end_time = 0
@@ -15,19 +19,18 @@ try:
 		if time() > end_time:
 			calendar = Calendar()
 			calendar['X-WR-CALNAME'] = 'Weather'
-			calendar['X-WR-TIMEZONE'] = 'UTC'
+			calendar['X-WR-TIMEZONE'] = os.environ.get('TZ')
 			calendar['X-WR-CALDESC'] = 'Displays weather for the week'
 
-			with open('calendar_service/data/test.json', 'r') as f:
-				data: dict = json.load(f)
+			data: dict = get_weather()
 
-			for i in range(7):
+			for i in range(config.get('CONFIG.look_forward_amount')):
 				day = Day(data, i)
 				calendar.add_component(day.get_event())
 
 			string = calendar.to_ical().decode("utf-8").strip()
 
-			with open('calendar_service/data/output.ics', 'w') as f:
+			with open(f'{PATH}data/output.ics', 'w') as f:
 				f.write(string)
 
 			to_send = base64.b64encode(bytes(string, 'UTF-8'))
@@ -38,4 +41,4 @@ try:
 except KeyboardInterrupt:
 	quit()
 except Exception as e:
-	print(e)
+	raise e

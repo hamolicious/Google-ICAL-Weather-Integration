@@ -1,11 +1,11 @@
 from __future__ import annotations
 from icalendar import Event
 from datetime import datetime
-from icons import icons
-from random import choice
 from hashlib import md5
 from datetime import datetime
+from hamconfig import parse_file
 
+config = parse_file('calendar_service/config.hamconf')
 
 class Day:
 	def __init__(self, data: dict, index: int) -> None:
@@ -24,8 +24,10 @@ class Day:
 		precipitation_sum = get('precipitation_sum')
 		precipitation_snow_sum = get('snowfall_sum')
 
-		icon = icons.get(str(weather_code)).get('icon')
-		desc = icons.get(str(weather_code)).get('desc')
+		desc, icon_name = config.get(f'WEATHERCODES.weather_code_{weather_code}')
+		icon = config.get(f'ICONS.{icon_name}')
+
+		uid = md5((iso8601(time) + 'hamolicious').encode('UTF-8')).hexdigest()
 
 		maximum_temperature = get('temperature_2m_max')
 		minimum_temperature = get('temperature_2m_min')
@@ -47,7 +49,7 @@ class Day:
 
 		self.__event['dtstart'] = iso8601(time)
 		self.__event['summary'] = f'{icon} Weather | {desc}'
-		self.__event['uid'] = md5(iso8601(time).encode('UTF-8')).hexdigest()
+		self.__event['uid'] = uid
 		self.__event['description'] = '\n'.join(description)
 
 	def get_event(self) -> Event:

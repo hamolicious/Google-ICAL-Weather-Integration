@@ -1,7 +1,7 @@
 FROM python:3.10.8
 
 
-COPY calendar_service/requirements.txt ./
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY calendar_service/ calendar_service
