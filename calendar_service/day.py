@@ -4,6 +4,7 @@ from datetime import datetime
 from icons import icons
 from random import choice
 from hashlib import md5
+from datetime import datetime
 
 
 class Day:
@@ -32,13 +33,16 @@ class Day:
 		sunset = hms(get('sunset'))
 		maximum_wind_speeds = get('windspeed_10m_max')
 
+		update_time = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+
 		description = [
 			f'Maximum Temperature: {maximum_temperature}°C',
 			f'Minimum Temperature: {minimum_temperature}°C',
-			f'Sunrise: {sunrise}', # sunrise
-			f'Sunset: {sunset}', # sunset
-			f'Precipitation: {precipitation_sum}mm', # precipitation
-			f'Maximum wind speeds: {maximum_wind_speeds}km/h', # max_windspeed
+			f'Sunrise: {sunrise}',
+			f'Sunset: {sunset}',
+			f'Precipitation: {precipitation_sum}mm',
+			f'Maximum wind speeds: {maximum_wind_speeds}km/h',
+			f'Last Update: {update_time}',
 		]
 
 		self.__event['dtstart'] = iso8601(time)
